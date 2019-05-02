@@ -9,11 +9,7 @@ export const MainContainer = styled.div`
     height: 160px;
     margin-bottom: 26px;
     
-    .description-card {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 16px;
-    }
+    
 `
 
 export const CardContainer = styled.div`
@@ -66,4 +62,10 @@ export const DescriptionCard = styled.span`
     color: #000;
     margin-left: 10px;
     font-weight: ${props => props.weight ? props.weight : '600'};
+    
+    &.description-card {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
 `
