@@ -18,23 +18,21 @@ import {
 const cardRechargeData = [
   {
     bg: bg,
+    api: "https://tidal-hearing.glitch.me/recarga",
     renderRechargeCards: [
       {
-        cardValue: "5"
       },
       {
-        cardValue: "10"
       }
     ]
   },
   {
     bg: bg2,
+    api: "https://tidal-hearing.glitch.me/dados",
     renderRechargeCards: [
       {
-        cardValue: "5"
       },
       {
-        cardValue: "15"
       }
     ]
   },

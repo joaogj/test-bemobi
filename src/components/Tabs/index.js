@@ -20,7 +20,7 @@ class HapzTabs extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            amount: 0,
+            amount: 5,
             bonus: 0,
             gb_amount: 0,
             data1: [],
@@ -29,34 +29,44 @@ class HapzTabs extends React.Component {
         }
     }
 
-    componentDidMount () {
-        axios.get("https://tidal-hearing.glitch.me/recarga")
+    getValues = (data) => {
+        axios.get(data)
             .then(response => {
                 // handle success
-                console.log(response);
-                this.setState({
-                    data1: response.data
-                })
-            })
-        axios.get("https://tidal-hearing.glitch.me/dados")
-            .then(data => {
-                console.log(data)
-                this.setState({
-                        data2: data.data
-                })
-            })
-    }
+                console.log(response.data[0]);
+                // this.setState({
+                //     arr: response.data
+                // })
+                // console.log("arr " + this.state.arr)
+                if(data === "https://tidal-hearing.glitch.me/recarga")
+                {
+                    console.log("é recarga")
 
-    concatObj(data1, data2, arr) {
-        arr = data1.concat(data2)
-        console.log(arr)
+                   for(let i = 0; i < response.data.lenght; i++)
+                   {
+                       console.log(response.data[i])
+                       console.log("fjkasjfsafj")
+                       this.setState({
+                           amount: response.data[i].amount
+                       })
+                   }
+                   console.log(this.state.amount)
+                }
+                else if(data === "https://tidal-hearing.glitch.me/dados")
+                {
+                    console.log("é dados")
 
-        for(let i = 0; i < arr.lenght; i++){
-            if(i <= arr[1])
-            {
-                
-            }
-        }
+                   for(let i = 0; i < response.data.lenght; i++)
+                   {
+                        console.log("dadoooooos")
+                       console.log(response.data[i].amount)
+                       this.setState({
+                           gb_amount: response.data[i].gb_amount
+                       })
+                   }
+                   console.log(this.state.gb_amount)
+                }
+            })
     }
 
     render () {
@@ -66,14 +76,22 @@ class HapzTabs extends React.Component {
                     {this.props.renderTabsPanel.map((item, key) =>{
                         return (
                             <TabPanel key={key}>
-                            {this.concatObj(this.state.data1, this.state.data2, this.state.arr)}
+                            {this.getValues(item.api)}
                                 <CardsContainer>
-                                    {item.renderRechargeCards.map((item, key) => {
+                                {item.api === "https://tidal-hearing.glitch.me/recarga" &&
+                                    item.renderRechargeCards.map((item, key) => {
                                         return (
-                                            <RechargeCard key={key} cardValue={item.cardValue}></RechargeCard>
+                                            <RechargeCard key={key} cardValue={this.state.amount}></RechargeCard>
                                         )
                                     })
-                                    }
+                                }
+                                {item.api === "https://tidal-hearing.glitch.me/dados" &&
+                                    item.renderRechargeCards.map((item, key) => {
+                                        return (
+                                            <RechargeCard key={key} cardValue={this.state.gb_amount}></RechargeCard>
+                                        )
+                                    })
+                                }
                                 </CardsContainer>
                                 <TabContent bg={item.bg}></TabContent>
                             </TabPanel>
