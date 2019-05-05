@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import bg from '../../img/bg-credits-img.png';
 
 export const StyledTabs = styled(Tabs)`
-    /* background-image: url(${bg}); */
     height: 424px;
     display: flex;
     flex-direction: column;
@@ -12,11 +11,8 @@ export const StyledTabs = styled(Tabs)`
 `
 
 export const StyledTabList = styled(TabList)`
-    /* background-image: url(${bg}); */
     width: 100%;
     height: 44px;
-    /* background: #4F4F4F; */
-    /* border: 1px solid #f2f2f2; */
     box-sizing: border-box;
     display: flex;
     position: absolute;
@@ -24,15 +20,26 @@ export const StyledTabList = styled(TabList)`
     margin-top: 0;
 `
 export const StyledTab = styled(Tab)`
+    font-family: 'Titillium Web';
     width: 50%;
+    font-size: 14px;
     border: 1px solid #fff;
     display: flex;
+    font-weight: normal;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #F2F2F2;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        font-weight: bold;
+    }
 
     &.selectedTab {
+        font-weight: bold;
         &:before {
             content: "";
             position: absolute;

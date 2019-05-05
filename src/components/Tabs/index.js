@@ -1,11 +1,9 @@
-import React from 'react'
-import {Tabs, TabPanel } from 'react-tabs';
-import bg from '../../img/bg-credits-img.png';
-import bg2 from '../../img/bg-data-img.png';
+import React from 'react';
+import {TabPanel} from 'react-tabs';
 import logo from '../../img/hapz-thunder.png';
 import hapz from '../../img/hapz-logo.png';
 import RechargeCard from '../RechargeCard';
-import axios from 'axios'
+import axios from 'axios';
 
 import {
     StyledTabs,
@@ -16,7 +14,6 @@ import {
     HeaderContainer,
     StyledTabList,
     StyledTab,
-    StyledTabPanel,
     TabContent,
     CardsContainer,
 } from './style'
@@ -66,8 +63,8 @@ class HapzTabs extends React.Component {
                                 <TabContent bg={item.bg}>
                                     <HeaderContainer>
                                         <LogoContainer>
-                                            <img className="logo" src={logo} />
-                                            <img className="logo-name" src={hapz} />
+                                            <img className="logo" src={logo} alt="" />
+                                            <img className="logo-name" src={hapz} alt="" />
                                         </LogoContainer>
                                         <TitleContainer>
                                             <PageSubtitle>Você está sem saldo</PageSubtitle>

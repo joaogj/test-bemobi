@@ -28,15 +28,15 @@ export const ButtonContainer = styled.div`
     flex-direction: row;
     justify-content: flex-end;
     width: auto;
-    margin: 14px 14px;
+    margin: 14px 8px;
 `
 
 export const ButtonSubscribe = styled.div`
+    font-family: 'Roboto';
     background-color: #2F80ED;
     border-radius: 2px;
     max-width: 59px;
     width: 34%;
-    min-width: 45px;
     height: 21px;
     display: flex;
     justify-content: center;

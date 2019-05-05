@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import Card from './components/Card';
 import CardMap from './components/CardMap';
 import HapzTabs from './components/Tabs';
 import saraiva from './img/saraiva-img.png';
@@ -39,19 +38,19 @@ const cardRechargeData = [
 
 const cardData = [
   {
-    cardTitle: "Hapz Descontos",
+    cardTitle: "HAPZ Descontos",
     img: saraiva,
     descriptionCard: "Saraiva 10%",
     dayOff: "CURTA O SOM"
   },
   {
-    cardTitle: "HapFit",
+    cardTitle: "HAPFIT",
     img: hapfit,
     descriptionCard: "Corpo perfeito",
     dayOff: "5 DIAS GRÁTIS"
   },
   {
-    cardTitle: "Hapz Sounds",
+    cardTitle: "HAPZ Sounds",
     img: sounds,
     descriptionCard: "Curta um som",
     dayOff: "7 DIAS GRÁTIS"
