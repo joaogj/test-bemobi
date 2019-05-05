@@ -3,15 +3,42 @@ import logo from './logo.svg';
 import './App.css';
 import Card from './components/Card';
 import CardMap from './components/CardMap';
+import HapzTabs from './components/Tabs';
 import saraiva from './img/saraiva-img.png';
 import hapfit from './img/hapfit-img.png';
 import sounds from './img/hapz-sounds-img.png';
 import playkids from './img/playkids-img.png';
+import bg from './img/bg-credits-img.png';
+import bg2 from './img/bg-data-img.png';
 
 import {
   PageContainer
 } from './App.jsx'
 
+const cardRechargeData = [
+  {
+    bg: bg,
+    renderRechargeCards: [
+      {
+        cardValue: "5"
+      },
+      {
+        cardValue: "10"
+      }
+    ]
+  },
+  {
+    bg: bg2,
+    renderRechargeCards: [
+      {
+        cardValue: "5"
+      },
+      {
+        cardValue: "15"
+      }
+    ]
+  },
+] 
 
 const cardData = [
   {
@@ -58,9 +85,12 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <PageContainer>
-      <CardMap cardRender={cardData} />
-    </PageContainer>
+    <div>
+      <HapzTabs renderTabsPanel={cardRechargeData}/>
+      <PageContainer>
+        <CardMap cardRender={cardData} />
+      </PageContainer>
+    </div>
   );
 }
 
