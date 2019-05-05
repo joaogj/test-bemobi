@@ -44,12 +44,13 @@ export const StyledTab = styled(Tab)`
     }
 `
 export const StyledTabPanel = styled(TabPanel)`
-    background: linear-gradient(90deg, #333333 4.8%, rgba(51, 51, 51, 0) 70.13%), url(${props => props.bg ? props.bg : props.bg});
-    height: 100%;
+    padding: 32px 18px;
 `
 export const TabContent = styled.div`
     background: linear-gradient(90deg, #333333 4.8%, rgba(51, 51, 51, 0) 70.13%), url(${props => props.bg ? props.bg : props.bg});
     height: 424px;
+    display: flex;
+    align-items: flex-start;
 `
 export const CardsContainer = styled.div`
     display: flex;
@@ -59,6 +60,50 @@ export const CardsContainer = styled.div`
     justify-content: space-around;
     width: 100%;
 `
+export const PageTitle = styled.h1`
+    font-family: 'Titillium Web';
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 36px;
+    line-height: 37px;
+    font-weight: normal;
+    text-transform: uppercase;
+    width: 50%;
+    color: #fff;
+    margin: 0;
+`
+export const PageSubtitle = styled.h2`
+    font-family: 'Titillium Web';
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+`
+
+export const LogoContainer = styled.div`
+    display: flex;
+    margin-bottom: 36px;
+    height: auto;
+    width: auto;
+
+    .logo-name {
+        width: 81px;
+        height: 26px;
+    }
+    .logo {
+        height: 35px;
+    }
+`
+export const HeaderContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 32px 15px;
+`
+export const TitleContainer = styled.div`
+
+` 
 
 StyledTabList.tabsRole = 'TabList'
 StyledTab.tabsRole = 'Tab'

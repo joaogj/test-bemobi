@@ -8,8 +8,6 @@ export const MainContainer = styled.div`
     width: 45%;
     height: 160px;
     margin-bottom: 26px;
-    
-    
 `
 
 export const CardContainer = styled.div`
@@ -51,6 +49,7 @@ export const TextButton = styled.span`
     text-transform: uppercase;
 `
 export const CardTitle = styled.span`
+    font-family: 'Titillium Web';
     font-size: 16px;
     color: #fff;
     margin-left: 10px;
