@@ -1,5 +1,7 @@
 import React from 'react';
 import {TabPanel} from 'react-tabs';
+import {connect} from 'react-redux';
+import {recarga} from '../../actions/recharge'
 import logo from '../../img/hapz-thunder.png';
 import hapz from '../../img/hapz-logo.png';
 import RechargeCard from '../RechargeCard';
@@ -18,8 +20,20 @@ import {
     CardsContainer,
 } from './style'
 
-class HapzTabs extends React.Component {
 
+const mapDispatchToProps = dispatch => ({
+    recarga: () => dispatch(recarga())
+  })
+  
+  const mapStateToProps = state => ({
+    ...state
+   })
+  
+
+class HapzTabs extends React.Component {
+    recarga = (event) => {
+        this.props.recarga();
+       }
     
     constructor(props) {
         super(props);
@@ -31,25 +45,26 @@ class HapzTabs extends React.Component {
     }
 
     componentDidMount(){
-        axios.get("https://tidal-hearing.glitch.me/recarga")
-            .then(response => {
-                for(let i = 0; i < response.data.length; i++)
-                {
-                    this.setState({
-                        amount: { ...this.state.amount, [i]: response.data[i].amount},
-                        bonus: {...this.state.bonus, [i]: response.data[i].bonus_amount}
-                    });
-                }
-            })
-        axios.get("https://tidal-hearing.glitch.me/dados")
-            .then(response =>{
-                for(let i = 0; i < response.data.length; i++)
-                {
-                    this.setState({
-                        gb_amount: { ...this.state.gb_amount, [i]: response.data[i].gb_amount}
-                    });
-                }
-            })
+        this.recarga()
+        // axios.get("https://tidal-hearing.glitch.me/recarga")
+        //     .then(response => {
+        //         for(let i = 0; i < response.data.length; i++)
+        //         {
+        //             this.setState({
+        //                 amount: { ...this.state.amount, [i]: response.data[i].amount},
+        //                 bonus: {...this.state.bonus, [i]: response.data[i].bonus_amount}
+        //             });
+        //         }
+        //     })
+        // axios.get("https://tidal-hearing.glitch.me/dados")
+        //     .then(response =>{
+        //         for(let i = 0; i < response.data.length; i++)
+        //         {
+        //             this.setState({
+        //                 gb_amount: { ...this.state.gb_amount, [i]: response.data[i].gb_amount}
+        //             });
+        //         }
+        //     })
     }
 
     render () {
@@ -102,4 +117,4 @@ class HapzTabs extends React.Component {
     }
 }
 
-export default HapzTabs
+export default connect(mapStateToProps, mapDispatchToProps)(HapzTabs);

@@ -1,5 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {recharge} from './actions/recharge';
+import {simpleAction} from './actions/simpleAction';
+
 import CardMap from './components/CardMap';
 import HapzTabs from './components/Tabs';
 import saraiva from './img/saraiva-img.png';
@@ -63,15 +66,38 @@ const cardData = [
   }
 ]
 
-function App() {
-  return (
-    <div>
-      <HapzTabs renderTabsPanel={cardRechargeData}/>
-      <PageContainer>
-        <CardMap cardRender={cardData} />
-      </PageContainer>
-    </div>
-  );
+const mapDispatchToProps = dispatch => ({
+  simpleAction: () => dispatch(simpleAction())
+})
+
+const mapStateToProps = state => ({
+  ...state
+ })
+
+
+class App extends Component {
+
+
+  simpleAction = (event) => {
+    this.props.simpleAction();
+   }
+
+  render(){
+    return (
+      <div>
+        <HapzTabs renderTabsPanel={cardRechargeData}/>
+        <PageContainer>
+          <CardMap cardRender={cardData} />
+        </PageContainer>
+        <pre>
+        {
+          JSON.stringify(this.props)
+        }
+        </pre>
+        <button onClick={this.simpleAction} >Test redux action</button>
+      </div>
+    ); 
+  }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
