@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {recharge} from './actions/recharge';
+import {recarga} from './actions/recarga';
 import {simpleAction} from './actions/simpleAction';
 
 import CardMap from './components/CardMap';
@@ -67,20 +67,19 @@ const cardData = [
 ]
 
 const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
+  recarga: () => dispatch(recarga())
 })
 
 const mapStateToProps = state => ({
   ...state
  })
 
-
 class App extends Component {
 
+  componentDidMount() {
+  this.props.recarga();
+}
 
-  simpleAction = (event) => {
-    this.props.simpleAction();
-   }
 
   render(){
     return (
@@ -94,10 +93,10 @@ class App extends Component {
           JSON.stringify(this.props)
         }
         </pre>
-        <button onClick={this.simpleAction} >Test redux action</button>
+        <button>Test redux action</button>
       </div>
     ); 
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, recarga())(App);
