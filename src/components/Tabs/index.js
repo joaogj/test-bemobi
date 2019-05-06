@@ -1,7 +1,7 @@
 import React from 'react';
 import {TabPanel} from 'react-tabs';
 import {connect} from 'react-redux';
-import {recarga} from '../../actions/recarga'
+import {recarga, dados} from '../../actions/recarga'
 import logo from '../../img/hapz-thunder.png';
 import hapz from '../../img/hapz-logo.png';
 import RechargeCard from '../RechargeCard';
@@ -26,14 +26,13 @@ const mapDispatchToProps = dispatch => ({
   })
   
   const mapStateToProps = state => ({
-    ...state
+    amount: state.recargaReducer.amount,
+    bonus: state.recargaReducer.bonus_amount,
+    gb_amount: state.recargaReducer.gb_amount
    })
   
 
 class HapzTabs extends React.Component {
-    recarga = (event) => {
-        this.props.recarga();
-       }
     
     constructor(props) {
         super(props);
@@ -44,31 +43,10 @@ class HapzTabs extends React.Component {
         }
     }
 
-    componentDidMount(){
-        this.recarga()
-        // axios.get("https://tidal-hearing.glitch.me/recarga")
-        //     .then(response => {
-        //         for(let i = 0; i < response.data.length; i++)
-        //         {
-        //             this.setState({
-        //                 amount: { ...this.state.amount, [i]: response.data[i].amount},
-        //                 bonus: {...this.state.bonus, [i]: response.data[i].bonus_amount}
-        //             });
-        //         }
-        //     })
-        // axios.get("https://tidal-hearing.glitch.me/dados")
-        //     .then(response =>{
-        //         for(let i = 0; i < response.data.length; i++)
-        //         {
-        //             this.setState({
-        //                 gb_amount: { ...this.state.gb_amount, [i]: response.data[i].gb_amount}
-        //             });
-        //         }
-        //     })
-    }
-
     render () {
-        console.log(this.state.amount);
+        if (!this.props.amount)
+            return <div>Loading...</div>;
+
         return (
             <StyledTabs selectedTabClassName="selectedTab">
                 <div>
@@ -91,14 +69,14 @@ class HapzTabs extends React.Component {
                                 {item.api === "https://tidal-hearing.glitch.me/recarga" &&
                                     item.renderRechargeCards.map((item, key) => {
                                         return (
-                                            <RechargeCard key={key} cardValue={this.state.amount[key]} bonus={this.state.bonus[key]}></RechargeCard>
+                                            <RechargeCard key={key} cardValue={this.props.amount[key]} bonus={this.state.bonus[key]}></RechargeCard>
                                         )
                                     })
                                 }
                                 {item.api === "https://tidal-hearing.glitch.me/dados" &&
                                     item.renderRechargeCards.map((item, key) => {
                                         return (
-                                            <RechargeCard key={key} cardValue={this.state.gb_amount[key]}></RechargeCard>
+                                            <RechargeCard key={key} cardValue={this.props.gb_amount[key]}></RechargeCard>
                                         )
                                     })
                                 }
@@ -117,4 +95,4 @@ class HapzTabs extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HapzTabs);
+export default connect(mapStateToProps)(HapzTabs);

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {recarga} from './actions/recarga';
-import {simpleAction} from './actions/simpleAction';
+import {recarga, dados} from './actions/recarga';
 
 import CardMap from './components/CardMap';
 import HapzTabs from './components/Tabs';
@@ -66,23 +65,17 @@ const cardData = [
   }
 ]
 
-const mapDispatchToProps = dispatch => ({
-  recarga: () => dispatch(recarga())
-})
-
-const mapStateToProps = state => ({
-  amout: state
- })
 
 class App extends Component {
 
-  componentDidMount() {
+componentDidMount() {
   this.props.recarga();
+  this.props.dados();
 }
 
 
   render(){
-    console.log(this.props.amount)
+    console.log(this.props)
     return (
       <div>
         <HapzTabs renderTabsPanel={cardRechargeData}/>
@@ -100,4 +93,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps, {recarga})(App);
+export default connect(null, {recarga, dados})(App);
