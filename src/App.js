@@ -71,7 +71,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const mapStateToProps = state => ({
-  ...state
+  amout: state
  })
 
 class App extends Component {
@@ -82,6 +82,7 @@ class App extends Component {
 
 
   render(){
+    console.log(this.props.amount)
     return (
       <div>
         <HapzTabs renderTabsPanel={cardRechargeData}/>
@@ -99,4 +100,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps, recarga())(App);
+export default connect(mapStateToProps, {recarga})(App);
