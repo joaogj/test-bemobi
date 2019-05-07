@@ -21,25 +21,25 @@ Essas instruções farão com que você tenha uma cópia do projeto em execuçã
  ```
     
 ## Instalação
-  **1 - Clonar o projeto
+  **1 - Clonar o projeto**
   ```
   git clone https://github.com/joaogj/test-bemobi.git
   ```
   
-  **2 - Entrar na raiz do projeto e instalar dependências
+  **2 - Entrar na raiz do projeto e instalar dependências**
  ```
  - cd test-bemobi
  - npm install
  ```
   
-  **3 - Rodar em modo de desenvolvimento
+  **3 - Rodar em modo de desenvolvimento**
   ```
   npm start
   ```
   
   OBS: ao rodar o comando npm start, será aberta automaticamente uma página no seu navegador, apontando para http://localhost:3000, caso isso não aconteça, basta acessar a url manualmente. A página irá recarregar automaticamente caso haja alguma edição.
     
-  **4 - Build da aplicação para produção
+  **4 - Build da aplicação para produção**
   ```
   npm run build
   ```
@@ -48,7 +48,7 @@ Essas instruções farão com que você tenha uma cópia do projeto em execuçã
 Ele agrupa corretamente o React no modo de produção e otimiza o build para obter o melhor desempenho.
 A compilação é reduzida e os nomes dos arquivos incluem os hashes. <br>
 
- **5 - Rodar storybook
+ **5 - Rodar storybook**
   ```
   npm run storybook
   ```
