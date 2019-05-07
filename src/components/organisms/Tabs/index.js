@@ -63,8 +63,8 @@ class HapzTabs extends React.Component {
                                 <TabContent bg={item.bg}>
                                     <HeaderContainer>
                                         <LogoContainer>
-                                            <img className="logo" src={logo} alt="" />
-                                            <img className="logo-name" src={hapz} alt="" />
+                                            <img className="logo" src={logo} alt="Logotipo hapz" />
+                                            <img className="logo-name" src={hapz} alt="Hapz" />
                                         </LogoContainer>
                                         <TitleContainer>
                                             <PageSubtitle>Você está sem saldo</PageSubtitle>
@@ -73,7 +73,7 @@ class HapzTabs extends React.Component {
                                     </HeaderContainer>
                                 </TabContent>
                                 <CardsContainer>
-                                {item.api === "https://tidal-hearing.glitch.me/recarga" &&
+                                {item.api === "recarga" &&
                                     item.renderRechargeCards.map((item, key) => {
                                         return (
                                             <RechargeCard 
@@ -85,7 +85,7 @@ class HapzTabs extends React.Component {
                                         )
                                     })
                                 }
-                                {item.api === "https://tidal-hearing.glitch.me/dados" &&
+                                {item.api === "dados" &&
                                     item.renderRechargeCards.map((item, key) => {
                                         return (
                                             <RechargeCard 

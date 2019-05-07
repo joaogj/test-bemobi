@@ -35,10 +35,12 @@ export const StyledTab = styled(Tab)`
 
     &:hover {
         font-weight: bold;
+        background: rgba(255, 255, 255, 0.2);
     }
 
     &.selectedTab {
         font-weight: bold;
+        background: rgba(255, 255, 255, 0.2);
         &:before {
             content: "";
             position: absolute;

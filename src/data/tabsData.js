@@ -4,7 +4,7 @@ import bgData from '../img/bg-data-img.png';
 const cardsRechargeData = [
     {
       bg: bgCredits,
-      api: "https://tidal-hearing.glitch.me/recarga",
+      api: "recarga",
       renderRechargeCards: [
         {textButton: "contratar"},
         {textButton: "contratar"}
@@ -12,7 +12,7 @@ const cardsRechargeData = [
     },
     {
       bg: bgData,
-      api: "https://tidal-hearing.glitch.me/dados",
+      api: "dados",
       renderRechargeCards: [
         { textButton: "contratar"},
         { textButton: "contratar"}
