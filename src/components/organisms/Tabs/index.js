@@ -1,14 +1,14 @@
 import React from 'react';
 import {TabPanel} from 'react-tabs';
-import logo from '../../img/hapz-thunder.png';
-import hapz from '../../img/hapz-logo.png';
-import RechargeCard from '../RechargeCard';
+import logo from '../../../img/hapz-thunder.png';
+import hapz from '../../../img/hapz-logo.png';
+import RechargeCard from '../../molecules/RechargeCard';
+import Title from '../../atoms/Title'
 import axios from 'axios';
 
 import {
     StyledTabs,
     LogoContainer,
-    PageTitle,
     TitleContainer,
     PageSubtitle,
     HeaderContainer,
@@ -68,7 +68,7 @@ class HapzTabs extends React.Component {
                                         </LogoContainer>
                                         <TitleContainer>
                                             <PageSubtitle>Você está sem saldo</PageSubtitle>
-                                            <PageTitle>Recarregue Agora</PageTitle>
+                                            <Title title="Recarregue Agora"/>
                                         </TitleContainer>
                                     </HeaderContainer>
                                 </TabContent>

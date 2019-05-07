@@ -1,12 +1,11 @@
 import React from 'react'
+import SubscribeButton from '../../atoms/SubscribeButton'
 
 import {
     MainContainer,
     CardContainer,
     DescriptionCard,
     ButtonContainer,
-    ButtonSubscribe,
-    TextButton,
     CardTitle,
 } from './style'
 
@@ -15,9 +14,7 @@ const Card = props => {
         <MainContainer>
             <CardContainer img={props.img}>
                     <ButtonContainer>
-                        <ButtonSubscribe>
-                            <TextButton>Assine</TextButton>
-                        </ButtonSubscribe>
+                        <SubscribeButton textButton="Assine" />
                     </ButtonContainer>
                 <CardTitle>{props.cardTitle}</CardTitle>
             </CardContainer>

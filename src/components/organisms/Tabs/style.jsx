@@ -66,17 +66,7 @@ export const CardsContainer = styled.div`
     justify-content: space-around;
     width: 100%;
 `
-export const PageTitle = styled.h1`
-    font-family: 'Titillium Web';
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 36px;
-    line-height: 37px;
-    font-weight: normal;
-    text-transform: uppercase;
-    width: 50%;
-    color: #fff;
-    margin: 0;
-`
+
 export const PageSubtitle = styled.h2`
     font-family: 'Titillium Web';
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

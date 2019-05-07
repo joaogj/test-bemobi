@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import CardMap from './components/CardMap';
-import HapzTabs from './components/Tabs';
+import CardMap from './components/organisms/CardMap';
+import HapzTabs from './components/organisms/Tabs';
 import cardsData from './data/cardsData';
 import cardsRechargeData from './data/tabsData';
 
