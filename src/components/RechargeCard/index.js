@@ -11,7 +11,7 @@ import {
 
 const RechargeCard = (props) => {
     return (
-        <CardContainer className="aqui-otario">
+        <CardContainer>
             {props.cardValue > 10 &&
                 <CardTitle>R${props.cardValue}</CardTitle>   
             }
@@ -24,7 +24,7 @@ const RechargeCard = (props) => {
             {!props.bonus &&
                 <CardSubtitle>Redes sociais ilimitadas</CardSubtitle>
             }
-            <ButtonContainer>Contratar</ButtonContainer>
+            <ButtonContainer>{props.textButton}</ButtonContainer>
         </CardContainer>
     )
 }

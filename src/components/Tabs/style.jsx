@@ -1,6 +1,5 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import styled from 'styled-components';
-import bg from '../../img/bg-credits-img.png';
 
 export const StyledTabs = styled(Tabs)`
     height: 424px;
