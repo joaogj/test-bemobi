@@ -1,4 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Hapz - Teste Bemobi
+
+Landing page desenvolvida para teste de conhecimento no processo seletivo da equipe Bemobi.
+
+## Tecnologias e metodologias utilizadas
+  * React.JS
+  * Webpack (create-react-app)
+  * Mobile First
+  * Atomic Design
+  * Styled-Components (SASS in JS)
+  * Storybook
+  
+## Passo a passo para execução do projeto
+
+Essas instruções farão com que você tenha uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
+
+## Pré-Requisitos
+  ` Node >= 6 
+    Npm >= 5.2`
+    
+## Instalação
+  1 - Clonar o projeto
+  `git clone https://github.com/joaogj/test-bemobi.git`
+  
+  2 - Entrar na raiz do projeto e instalar dependências
+  `cd test-bemobi
+   npm install`
+  
+  3 - Rodar em modo de desenvolvimento
+  `npm start`
+  
+  OBS: ao rodar o comando npm start, será aberta automaticamente uma página no seu navegador, apontando para http://localhost:3000, caso isso não aconteça, basta acessar a url manualmente. A página irá recarregar automaticamente caso haja alguma edição.
+    
 
 ## Available Scripts
 
