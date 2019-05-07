@@ -31,7 +31,7 @@ class HapzTabs extends React.Component {
         }
     }
 
-    componentDidMount(){
+    componentWillMount(){
         axios.get("https://tidal-hearing.glitch.me/recarga")
             .then(response => {
                 for(let i = 0; i < response.data.length; i++)
