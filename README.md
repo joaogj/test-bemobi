@@ -15,28 +15,27 @@ Landing page desenvolvida para teste de conhecimento no processo seletivo da equ
 Essas instruções farão com que você tenha uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
 
 ## Pré-Requisitos
-  ```
- - Node >= 6
- - NPM >= 5.2
-
+  ``` 
+  - Node >= 6
+  - NPM >= 5.2
  ```
     
 ## Instalação
   1 - Clonar o projeto
   ```
   git clone https://github.com/joaogj/test-bemobi.git
- 
   ```
   
   2 - Entrar na raiz do projeto e instalar dependências
  ```
  - cd test-bemobi
  - npm install
-
  ```
   
   3 - Rodar em modo de desenvolvimento
-  `npm start`
+  ```
+  npm start
+  ```
   
   OBS: ao rodar o comando npm start, será aberta automaticamente uma página no seu navegador, apontando para http://localhost:3000, caso isso não aconteça, basta acessar a url manualmente. A página irá recarregar automaticamente caso haja alguma edição.
     
